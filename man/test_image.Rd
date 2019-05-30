@@ -7,11 +7,17 @@
 test_image(type = c("png", "svg"))
 }
 \arguments{
-\item{type}{the type of the image. Can either be \code{png} (the default) or
+\item{type}{The type of the image, which can either be \code{png} (the default) or
 \code{svg}.}
 }
 \description{
 Two test images are available within the \pkg{gt} package. Both contain the
 same imagery (sized at 200px by 200px) but one is a PNG file while the other
-is an SVG file.
+is an SVG file. This function is most useful when paired with \code{\link[=local_image]{local_image()}}
+since we test various sizes of the test image within that function.
 }
+\seealso{
+Other image addition functions: \code{\link{ggplot_image}},
+  \code{\link{local_image}}, \code{\link{web_image}}
+}
+\concept{image addition functions}

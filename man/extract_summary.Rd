@@ -2,12 +2,12 @@
 % Please edit documentation in R/extract_summary.R
 \name{extract_summary}
 \alias{extract_summary}
-\title{Extract a summary list from a gt object}
+\title{Extract a summary list from a \pkg{gt} object}
 \usage{
 extract_summary(data)
 }
 \arguments{
-\item{data}{a table object that is created using the \code{\link{gt}()}
+\item{data}{a table object that is created using the \code{\link[=gt]{gt()}}
 function.}
 }
 \value{
@@ -15,7 +15,7 @@ a list of data frames containing summary data.
 }
 \description{
 Get a list of summary row data frames from a \code{gt_tbl} object where
-summary rows were added via the \code{\link{summary_rows}()} function. The
+summary rows were added via the \code{\link[=summary_rows]{summary_rows()}} function. The
 output data frames contain the \code{groupname} and \code{rowname} columns,
 whereby \code{rowname} contains descriptive stub labels for the summary rows.
 }

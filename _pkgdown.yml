@@ -6,7 +6,11 @@ home:
 reference:
   - title: Create Table
     desc: >
-      All gt tables begin with a call to `gt()`, where we would supply the
+      <a href="https://rstudio.cloud/project/159889">
+      <img src="https://github.com/rstudio/gt/raw/master/man/figures/rstudio-cloud-example.png" alt="RStudio Cloud Example" width="180px">
+      </a>
+      <br /><br />
+      All **gt** tables begin with a call to `gt()`, where we would supply the
       input data table (data frame or tibble) and some basic options for
       creating a stub (`rowname_col`) and row groups (`groupname_col`). We
       can also introduce a grouped tibble (via **dplyr**'s `group_by()`) for
@@ -19,7 +23,11 @@ reference:
 
   - title: Create/Modify Parts
     desc: >
-      A gt table can contain a few useful parts for conveying additional
+      <a href="https://rstudio.cloud/project/160008">
+      <img src="https://github.com/rstudio/gt/raw/master/man/figures/rstudio-cloud-example.png" alt="RStudio Cloud Example" width="180px">
+      </a>
+      <br /><br />
+      A **gt** table can contain a few useful parts for conveying additional
       information. These include a header (with a titles and subtitle), a
       footer (with footnotes and source notes), and additional areas for
       labels (row group labels, column spanner labels, the stubhead label).
@@ -38,6 +46,10 @@ reference:
 
   - title: Format Data
     desc: >
+      <a href="https://rstudio.cloud/project/160011">
+      <img src="https://github.com/rstudio/gt/raw/master/man/figures/rstudio-cloud-example.png" alt="RStudio Cloud Example" width="180px">
+      </a>
+      <br /><br />
       Columns of data can be formatted with the `fmt_*()` functions. We can
       specify the rows of these columns quite precisely with the `rows`
       argument. We get to apply these functions exactly once to each data
@@ -62,6 +74,10 @@ reference:
 
   - title: Modify Columns
     desc: >
+      <a href="https://rstudio.cloud/project/160017">
+      <img src="https://github.com/rstudio/gt/raw/master/man/figures/rstudio-cloud-example.png" alt="RStudio Cloud Example" width="180px">
+      </a>
+      <br /><br />
       The `cols_*()` functions allow for modifications that act on entire
       columns. This includes alignment of the data in columns
       (`cols_align()`), hiding columns from view (`cols_hide()`),
@@ -83,6 +99,10 @@ reference:
 
   - title: Modify Rows
     desc: >
+      <a href="https://rstudio.cloud/project/160465">
+      <img src="https://github.com/rstudio/gt/raw/master/man/figures/rstudio-cloud-example.png" alt="RStudio Cloud Example" width="180px">
+      </a>
+      <br /><br />
       The only function currently that modifies entire rows is the
       `row_group_order()` function. It lets us modify the ordering of any
       row groups in the table.
@@ -91,21 +111,29 @@ reference:
 
   - title: Add Rows
     desc: >
-      There is one function that will adds rows to a **gt** table and that
-      is the `summary_rows()` function. It's useful for adding summary rows
-      to any table that has a row groups and a stub (required for summary
-      row labels).
+      <a href="https://rstudio.cloud/project/160468">
+      <img src="https://github.com/rstudio/gt/raw/master/man/figures/rstudio-cloud-example.png" alt="RStudio Cloud Example" width="180px">
+      </a>
+      <br /><br />
+      There are two function that will add rows to a **gt** table:
+      `summary_rows()` and `grand_summary_rows()`. These are useful for adding
+      groupwise and grand summary rows.
     contents:
     - summary_rows
+    - grand_summary_rows
 
   - title: Export Table
     desc: >
-      There may come a day when you need to export a **gt** table in some
+      <a href="https://rstudio.cloud/project/174361">
+      <img src="https://github.com/rstudio/gt/raw/master/man/figures/rstudio-cloud-example.png" alt="RStudio Cloud Example" width="180px">
+      </a>
+      <br /><br />
+      There may come a day when you need to export a **gt** table to some
       specific format. We have functions for getting the HTML content of
       a **gt** table (`as_raw_html()`), getting LaTeX code (`as_latex()`),
       and getting rich text (`as_rtf()`). Did you use the `summary_rows()`
-      function and wish you had the summary data in a tibble? You can get
-      that with `extract_summary()`.
+      function and wish you had that summary data in a tibble? You can get
+      it out with `extract_summary()`.
     contents:
     - as_raw_html
     - as_latex
@@ -114,9 +142,11 @@ reference:
 
   - title: Shiny Functions
     desc: >
-      Shiny is great for building interactive web apps with R. The **gt**
-      table render function (for `server`) is `render_gt()` and the **gt**
-      table output element (for `ui`) is `gt_output()`.
+      Shiny is great for building interactive web apps with R. There's
+      really nothing quite like it. The **gt** package includes two
+      functions that work nicely with Shiny: a table render function
+      `render_gt()` (for the `server`) and a table output element
+      `gt_output()` (for the `ui`).
     contents:
     - render_gt
     - gt_output
@@ -129,9 +159,10 @@ reference:
       `tab_style()`, and `text_transform()` functions. The `cells_styles()`
       function is used exclusively with `tab_style()`'s `style` argument
       (and the `px()` & `pct()` functions may be useful there for specifying
-      units in pixels or percentages). The `md()` and `html()` helpers are
-      used only with `tab_header()`, `tab_footnote()`, `tab_spanner()`,
-      `tab_stubhead_label()`, and `tab_source_note()` functions.
+      units in pixels or percentages). The `md()` and `html()` helpers can
+      used be during label creation with the `tab_header()`,
+      `tab_footnote()`, `tab_spanner()`, `tab_stubhead_label()`, and
+      `tab_source_note()` functions.
     contents:
     - location_cells
     - cells_styles
@@ -140,16 +171,21 @@ reference:
     - html
     - px
     - pct
+    - currency
     - escape_latex
     - adjust_luminance
 
-  - title: Images
+  - title: Image Addition
     desc: >
-      There is preliminary support for inserting images into cells. This
-      currently works well for HTML table output. A strategy for adding
-      image content is to use these `*_image()` functions in a
-      `dplyr::mutate()` call (before introducing table data to `gt()`), or,
-      using these within targeted `text_transform()` calls.
+      <a href="https://rstudio.cloud/project/161121">
+      <img src="https://github.com/rstudio/gt/raw/master/man/figures/rstudio-cloud-example.png" alt="RStudio Cloud Example" width="180px">
+      </a>
+      <br /><br />
+      We can add images into a **gt** table with the help of the `*_image()`
+      functions. Two common ways to do this: (1) use `text_transform()` to
+      insert images into data cells, (2) use any function that creates
+      new labels (e.g., `tab_header()`) and use a `*_image()` function
+      within the `html()` helper.
     contents:
     - web_image
     - local_image
@@ -160,11 +196,14 @@ reference:
     desc: >
       These `info_*()` functions present us with **gt** tables containing
       useful information. So far, we can get reference information on
-      date styles (`info_date_style()`) and on time styles
-      (`info_time_style()`).
+      date styles (`info_date_style()`), on time styles
+      (`info_time_style()`), on a huge number of color palettes
+      (`info_paletteer()`), and, on currencies (`info_currencies()`).
     contents:
     - info_date_style
     - info_time_style
+    - info_paletteer
+    - info_currencies
 
   - title: Datasets
     desc: >

@@ -1,3 +1,9 @@
+
+# Create a vector of LaTeX packages to use as table dependencies
+latex_packages <- function() {
+  c("amsmath", "booktabs", "caption", "longtable")
+}
+
 # Transform a footnote glyph to a LaTeX representation as a superscript
 footnote_glyph_to_latex <- function(footnote_glyph) {
 

@@ -6,13 +6,13 @@
 \title{Twice hourly solar zenith angles by month & latitude}
 \format{A tibble with 816 rows and 4 variables:
 \describe{
-  \item{latitude}{The latitude in decimal degrees for the observations}
-  \item{month}{The measurement month; all calculations where conducted
-  for the first day of each month}
-  \item{tst}{The true solar time at the given \code{latitude} and date
-  (first of \code{month}) for which the solar zenith angle is calculated}
-  \item{sza}{The solar zenith angle in degrees, where \code{NA}s
-  indicate that sunrise hadn't yet occurred by the \code{tst} value}
+\item{latitude}{The latitude in decimal degrees for the observations}
+\item{month}{The measurement month; all calculations where conducted
+for the first day of each month}
+\item{tst}{The true solar time at the given \code{latitude} and date
+(first of \code{month}) for which the solar zenith angle is calculated}
+\item{sza}{The solar zenith angle in degrees, where \code{NA}s
+indicate that sunrise hadn't yet occurred by the \code{tst} value}
 }}
 \source{
 Calculated Actinic Fluxes (290 - 700 nm) for Air Pollution
@@ -41,5 +41,10 @@ of 10 a.m. The SZA has a strong dependence on the observer's latitude. For
 example, at a latitude of 50 degrees N at the start of January, the noontime
 SZA is 73.0 but a different observer at 20 degrees N would measure the
 noontime SZA to be 43.0 degrees.
+}
+\examples{
+# Here is a glimpse at the data
+# available in `sza`
+dplyr::glimpse(sza)
 }
 \keyword{datasets}
